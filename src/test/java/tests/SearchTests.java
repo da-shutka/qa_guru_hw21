@@ -22,7 +22,7 @@ public class SearchTests extends TestBase {
 
     @Test
     @DisplayName("Проверка открытия статьи из списка")
-    void unsuccessfulOpenArticleTest() {
+    void checkOpenArticleTest() {
         searchPage
                 .openPage()
                 .searchByText("Appium")
