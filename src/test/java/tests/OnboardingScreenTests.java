@@ -1,12 +1,41 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import pages.*;
 
+import java.util.Arrays;
+
+@DisplayName("Мобильные тесты на приветственную страницу в Википедии")
 public class OnboardingScreenTests extends TestBase {
 
-    //@Test
+    OnboardingFirstPage firstPage = new OnboardingFirstPage();
+    OnboardingSecondPage secondPage = new OnboardingSecondPage();
+    OnboardingThirdPage thirdPage = new OnboardingThirdPage();
+    OnboardingFourthPage fourthPage = new OnboardingFourthPage();
+    SearchPage searchPage = new SearchPage();
+
+
+    @Test
+    @Tag("onboard")
     @DisplayName("Проверка работы приветственной страницы")
     void successfulOnboardingScreenTest() {
-
+        if (Arrays.asList("real", "emulation").contains(System.getProperty("deviceHost"))) {
+            firstPage
+                    .checkTitlePage()
+                    .clickContinue();
+            secondPage
+                    .checkTitlePage()
+                    .clickContinue();
+            thirdPage
+                    .checkTitlePage()
+                    .clickContinue();
+            fourthPage
+                    .checkTitlePage()
+                    .clickGetStarted();
+            searchPage
+                    .checkSearchInputExistence();
+        }
     }
 }

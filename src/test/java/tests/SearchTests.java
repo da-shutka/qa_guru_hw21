@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ArticlePage;
 import pages.SearchPage;
@@ -12,6 +13,7 @@ public class SearchTests extends TestBase {
     ArticlePage articlePage = new ArticlePage();
 
     @Test
+    @Tag("search")
     @DisplayName("Проверка работы поисковой строки")
     void successfulSearchTest() {
         searchPage
@@ -21,6 +23,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @Tag("search")
     @DisplayName("Проверка открытия статьи из списка")
     void checkOpenArticleTest() {
         searchPage
