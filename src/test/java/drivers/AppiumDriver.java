@@ -40,7 +40,6 @@ public class AppiumDriver implements WebDriverProvider {
     }
 
     public static URL getAppiumServerUrl() {
-        System.out.println("config.url()=" + config.url());
         try {
             return new URL(config.url());
         } catch (MalformedURLException e) {
