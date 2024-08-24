@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
-import java.util.Arrays;
-
 @DisplayName("Мобильные тесты на приветственную страницу в Википедии")
 public class OnboardingScreenTests extends TestBase {
 
@@ -21,21 +19,19 @@ public class OnboardingScreenTests extends TestBase {
     @Tag("onboard")
     @DisplayName("Проверка работы приветственной страницы")
     void successfulOnboardingScreenTest() {
-        if (Arrays.asList("real", "emulation").contains(System.getProperty("deviceHost"))) {
-            firstPage
-                    .checkTitlePage()
-                    .clickContinue();
-            secondPage
-                    .checkTitlePage()
-                    .clickContinue();
-            thirdPage
-                    .checkTitlePage()
-                    .clickContinue();
-            fourthPage
-                    .checkTitlePage()
-                    .clickGetStarted();
-            searchPage
-                    .checkSearchInputExistence();
-        }
+        firstPage
+                .checkTitlePage()
+                .clickContinue();
+        secondPage
+                .checkTitlePage()
+                .clickContinue();
+        thirdPage
+                .checkTitlePage()
+                .clickContinue();
+        fourthPage
+                .checkTitlePage()
+                .clickGetStarted();
+        searchPage
+                .checkSearchInputExistence();
     }
 }

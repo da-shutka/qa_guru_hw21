@@ -35,7 +35,9 @@ public class AppiumDriver implements WebDriverProvider {
                 .setDeviceName(config.device())
                 .setApp(getAppPath())
                 .setAppPackage("org.wikipedia.alpha")
-                .setAppActivity("org.wikipedia.main.MainActivity");
+                .setAppActivity("org.wikipedia.main.MainActivity")
+                .setLanguage(config.language())
+                .setLocale(config.locale());
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 

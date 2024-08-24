@@ -33,6 +33,9 @@ public class BrowserStackDriver implements WebDriverProvider {
         caps.setCapability("project", config.project());
         caps.setCapability("build", config.build());
         caps.setCapability("name", config.name());
+        caps.setCapability("url", config.url());
+        caps.setCapability("language", config.language());
+        caps.setCapability("locale", config.locale());
 
         try {
             return new RemoteWebDriver(

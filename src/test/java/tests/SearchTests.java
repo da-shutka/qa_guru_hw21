@@ -30,10 +30,6 @@ public class SearchTests extends TestBase {
                 .openPage()
                 .searchByText("Appium")
                 .clickToFirstArticle();
-        if (!System.getProperty("deviceHost").equals("browserstack")) {
-            articlePage.checkPageSubtitle("Automation for Apps");
-        } else {
-            articlePage.checkErrorOnPage("error");
-        }
+        articlePage.checkPageSubtitle("Automation for Apps");
     }
 }

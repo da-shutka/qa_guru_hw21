@@ -11,18 +11,13 @@ public class SearchPage {
 
     @Step("Открыть страницу поиска")
     public SearchPage openPage() {
-        if (!System.getProperty("deviceHost").equals("browserstack")) {
-            back();
-        }
+        back();
         return this;
     }
 
     @Step("В поисковой строке набрать {text}")
     public SearchPage searchByText(String text) {
         $(id("org.wikipedia.alpha:id/search_container")).click();
-        if ($$x("//android.widget.TextView[@resource-id='org.wikipedia.alpha:id/langCodeText']").size() > 1) {
-            $x("//android.widget.TextView[@resource-id='org.wikipedia.alpha:id/langCodeText' and @text='EN']").click();
-        }
         $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys(text);
         return this;
     }
