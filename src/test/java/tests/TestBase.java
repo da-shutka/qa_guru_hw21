@@ -21,7 +21,6 @@ public class TestBase {
         if (System.getProperty("deviceHost") == null) {
             System.setProperty("deviceHost", "browserstack");
         }
-        System.out.println("deviceHost=" + System.getProperty("deviceHost"));
         switch (System.getProperty("deviceHost")) {
             case "browserstack":
                 Configuration.browser = BrowserStackDriver.class.getName();
